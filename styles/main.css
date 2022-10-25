@@ -2,7 +2,7 @@ body {
     margin:0px;
     padding:0px;
     font-family: "Open Sans", arial;
-    background-color: #ee82ee;
+    background-color: #FF420E;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +29,10 @@ body {
     -webkit-transform:translateZ(0) scale(1,1);
     box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
     opacity:1;
+}
+
+.main-menu>ul:first-child {
+    margin-top: 50px;
 }
 
 .main-menu>ul {
@@ -59,7 +63,6 @@ body {
     text-shadow: 1px 1px 1px  #fff;
 }
 
-
 .main-menu .nav-text  {
     position:relative;
     display:table-cell;
@@ -85,10 +88,12 @@ nav ul,nav li {
     background-color:#00bbbb;
     text-shadow: 0px 0px 0px;
 }
-form {
+
+li form {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50px;
 }
 
 .subs {
