@@ -96,6 +96,10 @@ li form {
     height: 50px;
 }
 
+form .nav-text {
+    margin-right: 58px;
+}
+
 .subs {
     position: absolute;
     text-align: center
