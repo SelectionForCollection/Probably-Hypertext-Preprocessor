@@ -1,4 +1,24 @@
 <?php
+
+// Поверка, есть ли GET запрос
+if (isset($_GET['pageno'])) {
+    // Если да то переменной $pageno присваиваем его
+    $pageno = $_GET['pageno'];
+} else { // Иначе
+    // Присваиваем $pageno один
+    $pageno = 1;
+}
+ 
+// Назначаем количество данных на одной странице
+$size_page = 5;
+// Вычисляем с какого объекта начать выводить
+$offset = ($pageno-1) * $size_page;
+
+$total_rows = $pdo->query("SELECT COUNT(*) FROM subscriptions;")->fetchAll()[0];
+echo $total_rows;
+// Вычисляем количество страниц
+$total_pages = ceil($total_rows / $size_page);
+
 if (isset($_POST["my_subs"])) {
     require_once('scripts/boot.php');
     $data = $pdo->query("SELECT id FROM users WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
