@@ -14,6 +14,20 @@ if (isset($_POST["btn1"])) {
     $idSub = 3;
 } elseif (isset($_POST["btn4"])) {
     $idSub = 4;
+} elseif (isset($_POST["btn5"])) {
+    $idSub = 5;
+} elseif (isset($_POST["btn6"])) {
+    $idSub = 6;
+} elseif (isset($_POST["btn7"])) {
+    $idSub = 7;
+} elseif (isset($_POST["btn8"])) {
+    $idSub = 8;
+} elseif (isset($_POST["btn9"])) {
+    $idSub = 9;
+} elseif (isset($_POST["btn10"])) {
+    $idSub = 10;
+} elseif (isset($_POST["btn11"])) {
+    $idSub = 11;
 } else {
     exit;
 }
