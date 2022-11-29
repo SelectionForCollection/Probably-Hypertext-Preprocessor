@@ -53,6 +53,48 @@ if (isset($_COOKIE["page_control"])) {
                         <input type="submit" name="btn4" value="подписаться"/>
                     </form>
                 </li>
+                <li>
+                    <form action="scripts/subscribe.php" method="POST">
+                            <span class="nav-text">КАНАЛ 5</span>
+                            <input type="submit" name="btn1" value="подписаться"/>
+                    </form>
+                </li>
+                <li>
+                    <form action="scripts/subscribe.php" method="POST">
+                            <span class="nav-text">КАНАЛ 6</span>
+                            <input type="submit" name="btn1" value="подписаться"/>
+                    </form>
+                </li>
+                <li>
+                    <form action="scripts/subscribe.php" method="POST">
+                            <span class="nav-text">КАНАЛ 7</span>
+                            <input type="submit" name="btn1" value="подписаться"/>
+                    </form>
+                </li>
+                <li>
+                    <form action="scripts/subscribe.php" method="POST">
+                            <span class="nav-text">КАНАЛ 8</span>
+                            <input type="submit" name="btn1" value="подписаться"/>
+                    </form>
+                </li>
+                <li>
+                    <form action="scripts/subscribe.php" method="POST">
+                            <span class="nav-text">КАНАЛ 9</span>
+                            <input type="submit" name="btn1" value="подписаться"/>
+                    </form>
+                </li>
+                <li>
+                    <form action="scripts/subscribe.php" method="POST">
+                            <span class="nav-text">КАНАЛ 10</span>
+                            <input type="submit" name="btn1" value="подписаться"/>
+                    </form>
+                </li>
+                <li>
+                    <form action="scripts/subscribe.php" method="POST">
+                            <span class="nav-text">КАНАЛ 11</span>
+                            <input type="submit" name="btn1" value="подписаться"/>
+                    </form>
+                </li>
             </ul>
         </nav>
         <form action="main.php" method="POST">
