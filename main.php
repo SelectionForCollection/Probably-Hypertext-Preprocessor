@@ -1,4 +1,11 @@
 <?php
+
+if (isset($_COOKIE["page_control"])) {
+    if ($_COOKIE["page_control"] <> "index") {
+        header("Location: /");
+    }
+} else header("Location: /");
+
 require_once('scripts/boot.php');
 
 if (isset($_GET['segment'])) {
@@ -7,29 +14,24 @@ if (isset($_GET['segment'])) {
     $segment = 1;
 }
  
-$size_page = 5;
-$offset = ($segment-1) * $size_page;
+$size = 5;
+$offset = ($segment-1) * $size;
 
-$data = $pdo->query("SELECT COUNT(*) FROM subscriptions;")->fetch();
+$data = $pdo->query("SELECT COUNT(*) FROM departments;")->fetch();
 $total_rows = $data[0];
 
-$total_pages = ceil($total_rows / $size_page);
+$total_pages = ceil($total_rows / $size);
 
-$data = $pdo->query("SELECT id FROM users WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$data = $pdo->query("SELECT id FROM developers WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $idUser = $data[0][0];
-$data = $pdo->query("SELECT nickname, title FROM users
-                     LEFT JOIN user_subscription ON users.id=user_subscription.id_user
-                     LEFT JOIN subscriptions ON user_subscription.id_subscription=subscriptions.id
-                     WHERE users.id=$idUser LIMIT $offset, $size_page;")->fetchAll();
+$data = $pdo->query("SELECT nickname, title FROM developers
+                     LEFT JOIN user_subscription ON developers.id=user_subscription.id_user
+                     LEFT JOIN departments ON user_subscription.id_subscription=departments.id
+                     WHERE developers.id=$idUser LIMIT $offset, $size;")->fetchAll();
+
 foreach ($data as $el) {
      echo  $el[1] . "</br>";
 }
-
-if (isset($_COOKIE["page_control"])) {
-    if ($_COOKIE["page_control"] <> "index") {
-        header("Location: /");
-    }
-} else header("Location: /");
 
 ?>
 <html>
@@ -110,11 +112,11 @@ if (isset($_COOKIE["page_control"])) {
         </nav>
         <ul class="pagination">
             <li><a href="?segment=1">First</a></li>
-            <li class="<?php if($segment <= 1){ echo 'disabled'; } ?>">
-                <a href="<?php if($segment <= 1){ echo '#'; } else { echo "?segment=".($segment - 1); } ?>">Prev</a>
+            <li class="<?php if($segment <= 1) { echo 'disabled'; } ?>">
+                <a href="<?php if($segment > 1) { echo "?segment=".($segment - 1); } ?>">Prev</a>
             </li>
-            <li class="<?php if($segment >= $total_pages){ echo 'disabled'; } ?>">
-                <a href="<?php if($segment >= $total_pages){ echo '#'; } else { echo "?segment=".($segment + 1); } ?>">Next</a>
+            <li class="<?php if($segment >= $total_pages) { echo 'disabled'; } ?>">
+                <a href="<?php if($segment < $total_pages) { echo "?segment=".($segment + 1); } ?>">Next</a>
             </li>
             <li><a href="?segment=<?php echo $total_pages; ?>">Last</a></li>
         </ul>
