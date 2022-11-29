@@ -1,37 +1,28 @@
 <?php
+require_once('scripts/boot.php');
 
-// Поверка, есть ли GET запрос
-if (isset($_GET['pageno'])) {
-    // Если да то переменной $pageno присваиваем его
-    $pageno = $_GET['pageno'];
-} else { // Иначе
-    // Присваиваем $pageno один
-    $pageno = 1;
+if (isset($_GET['segment'])) {
+    $segment = $_GET['segment'];
+} else {
+    $segment = 1;
 }
  
-// Назначаем количество данных на одной странице
 $size_page = 5;
-// Вычисляем с какого объекта начать выводить
-$offset = ($pageno-1) * $size_page;
+$offset = ($segment-1) * $size_page;
 
-$total_rows = $pdo->query("SELECT COUNT(*) FROM subscriptions;")->fetchAll()[0];
-echo $total_rows;
-// Вычисляем количество страниц
+$data = $pdo->query("SELECT COUNT(*) FROM subscriptions;")->fetch();
+$total_rows = $data[0];
+
 $total_pages = ceil($total_rows / $size_page);
 
-if (isset($_POST["my_subs"])) {
-    require_once('scripts/boot.php');
-    $data = $pdo->query("SELECT id FROM users WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
-    $idUser = $data[0][0];
-    $data = $pdo->query("SELECT nickname, title FROM users
-                         LEFT JOIN user_subscription ON users.id=user_subscription.id_user
-                         LEFT JOIN subscriptions ON user_subscription.id_subscription=subscriptions.id
-                         WHERE users.id=$idUser;")->fetchAll();
-    echo "<div class='subs'>";
-    foreach ($data as $el) {
-         echo  $el[1] . "</br>\n";
-    }
-    echo "</div>";
+$data = $pdo->query("SELECT id FROM users WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$idUser = $data[0][0];
+$data = $pdo->query("SELECT nickname, title FROM users
+                     LEFT JOIN user_subscription ON users.id=user_subscription.id_user
+                     LEFT JOIN subscriptions ON user_subscription.id_subscription=subscriptions.id
+                     WHERE users.id=$idUser LIMIT $offset, $size_page;")->fetchAll();
+foreach ($data as $el) {
+     echo  $el[1] . "</br>";
 }
 
 if (isset($_COOKIE["page_control"])) {
@@ -117,8 +108,15 @@ if (isset($_COOKIE["page_control"])) {
                 </li>
             </ul>
         </nav>
-        <form action="main.php" method="POST">
-            <input type="submit" name="my_subs" value="мои подписки"/>
-        </form>
+        <ul class="pagination">
+            <li><a href="?segment=1">First</a></li>
+            <li class="<?php if($segment <= 1){ echo 'disabled'; } ?>">
+                <a href="<?php if($segment <= 1){ echo '#'; } else { echo "?segment=".($segment - 1); } ?>">Prev</a>
+            </li>
+            <li class="<?php if($segment >= $total_pages){ echo 'disabled'; } ?>">
+                <a href="<?php if($segment >= $total_pages){ echo '#'; } else { echo "?segment=".($segment + 1); } ?>">Next</a>
+            </li>
+            <li><a href="?segment=<?php echo $total_pages; ?>">Last</a></li>
+        </ul>
     </body>
 </html>
