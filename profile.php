@@ -5,9 +5,9 @@
         <link type="image/x-icon" href="images/favicon.ico" rel="shortcut icon"/>
     </head>
     <body>
-        <h1 class="title-pen"> User Profile <span>UI</span></h1>
+        <h1 class="title-pen"><span>Вы</span> вошли как</h1>
         <div class="user-profile">
-            <img class="avatar" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTF_erFD1SeUnxEpvFjzBCCDxLvf-wlh9ZuPMqi02qGnyyBtPWdE-3KoH3s" alt="Ash" />
+            <img class="avatar" src="images/torvalds.jpg" />
             <div class="username">Will Smith</div>
             <div class="bio">Senior UI Designer</div>
             <div class="description">
@@ -26,11 +26,5 @@
                 </li>
             </ul>
         </div>
-        <footer>
-            <h1>inspired by 
-                <a href="https://dribbble.com/shots/1033074-User-Profile">
-                <span class="entypo-dribbble"></span> shot</a>
-            </h1>
-        </footer>
     </body>
 </html>
