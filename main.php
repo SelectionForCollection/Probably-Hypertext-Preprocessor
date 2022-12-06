@@ -41,85 +41,19 @@ echo '</ul>';
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
     <body>
-        <nav class="main-menu">
-            <ul>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">CTO</span>
-                            <input type="submit" name="btn1" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">SMP</span>
-                            <input type="submit" name="btn2" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">YAP</span>
-                            <input type="submit" name="btn3" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                        <span class="nav-text">OOP</span>
-                        <input type="submit" name="btn4" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">FP</span>
-                            <input type="submit" name="btn5" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">DEP_6</span>
-                            <input type="submit" name="btn6" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">DEP_7</span>
-                            <input type="submit" name="btn7" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">DEP_8</span>
-                            <input type="submit" name="btn8" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">DEP_9</span>
-                            <input type="submit" name="btn9" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">DEP_10</span>
-                            <input type="submit" name="btn10" value="подписаться"/>
-                    </form>
-                </li>
-                <li>
-                    <form action="scripts/subscribe.php" method="POST">
-                            <span class="nav-text">DEP_11</span>
-                            <input type="submit" name="btn11" value="подписаться"/>
-                    </form>
-                </li>
-            </ul>
-        </nav>
         <ul class="pagination">
-            <li><a href="?segment=1">Первая</a></li>
+            <li>
+                <a href="?segment=1">Первая</a>
+            </li>
             <li class="<?php if($segment <= 1) { echo 'disabled'; } ?>">
-                <a href="<?php if($segment > 1) { echo "?segment=".($segment - 1); } ?>">Назад</a>
+                <a href="<?php if($segment > 1) { echo "?segment=" . ($segment - 1); } ?>">Назад</a>
             </li>
             <li class="<?php if($segment >= $total_pages) { echo 'disabled'; } ?>">
-                <a href="<?php if($segment < $total_pages) { echo "?segment=".($segment + 1); } ?>">Вперед</a>
+                <a href="<?php if($segment < $total_pages) { echo "?segment=" . ($segment + 1); } ?>">Вперед</a>
             </li>
-            <li><a href="?segment=<?php echo $total_pages; ?>">Последняя</a></li>
+            <li>
+                <a href="?segment=<?php echo $total_pages; ?>">Последняя</a>
+            </li>
         </ul>
     </body>
 </html>
