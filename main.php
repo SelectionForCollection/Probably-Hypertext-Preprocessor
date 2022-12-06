@@ -29,10 +29,11 @@ $data = $pdo->query("SELECT nickname, title FROM developers
                      LEFT JOIN departments ON dev_dep.id_dep=departments.id
                      WHERE developers.id=$idUser LIMIT $offset, $size;")->fetchAll();
 
+echo '<div class="output">';
 foreach ($data as $el) {
-     echo  $el[1] . "</br>";
+     echo  "<br>" . $el[1] . "</br>";
 }
-
+echo '</div>';
 ?>
 <html>
     <head>
