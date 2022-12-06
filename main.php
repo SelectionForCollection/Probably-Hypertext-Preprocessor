@@ -29,11 +29,11 @@ $data = $pdo->query("SELECT nickname, title FROM developers
                      LEFT JOIN departments ON dev_dep.id_dep=departments.id
                      WHERE developers.id=$idUser LIMIT $offset, $size;")->fetchAll();
 
-echo '<div class="output">';
+echo '<ul class="output">';
 foreach ($data as $el) {
-     echo  "<br>" . $el[1] . "</br>";
+     echo "<li>" . $el[1] . "</li>";
 }
-echo '</div>';
+echo '</ul>';
 ?>
 <html>
     <head>
@@ -112,14 +112,14 @@ echo '</div>';
             </ul>
         </nav>
         <ul class="pagination">
-            <li><a href="?segment=1">First</a></li>
+            <li><a href="?segment=1">Первая</a></li>
             <li class="<?php if($segment <= 1) { echo 'disabled'; } ?>">
-                <a href="<?php if($segment > 1) { echo "?segment=".($segment - 1); } ?>">Prev</a>
+                <a href="<?php if($segment > 1) { echo "?segment=".($segment - 1); } ?>">Назад</a>
             </li>
             <li class="<?php if($segment >= $total_pages) { echo 'disabled'; } ?>">
-                <a href="<?php if($segment < $total_pages) { echo "?segment=".($segment + 1); } ?>">Next</a>
+                <a href="<?php if($segment < $total_pages) { echo "?segment=".($segment + 1); } ?>">Вперед</a>
             </li>
-            <li><a href="?segment=<?php echo $total_pages; ?>">Last</a></li>
+            <li><a href="?segment=<?php echo $total_pages; ?>">Последняя</a></li>
         </ul>
     </body>
 </html>
