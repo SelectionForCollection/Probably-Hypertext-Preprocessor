@@ -7,7 +7,7 @@
     <body>
         <h1 class="title-pen"><span>Вы</span> вошли как</h1>
         <div class="user-profile">
-            <img class="avatar" src="images/torvalds.jpg" />
+            <img class="avatar" src="images/ava.png" />
             <div class="username">Will Smith</div>
             <div class="bio">Senior UI Designer</div>
             <div class="description">
