@@ -42,7 +42,6 @@ echo '</ul>';
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
     <body>
-        <h1 class="title-pen">Вы вошли как</h1>
         <div class="user-profile">
             <img class="avatar" src="images/ava.png" />
             <div class="username">Will Smith</div>
