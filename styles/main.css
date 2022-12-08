@@ -15,11 +15,12 @@ body {
 }
 
 .output {
-    margin: 470px 0 0;
+    margin-top: 400px;
     padding: 0;
     list-style: none;
     counter-reset: li;
 }
+
 .output li {
     border: 2px solid #337AB7;
     background: #EBF3FA;
@@ -27,9 +28,11 @@ body {
     margin-bottom: 20px;
     padding: 16px 30px;
 }
+
 .output li:hover {
     z-index: 1;
 }
+
 .output li:before {
     border: 2px solid #337AB7;
     position: absolute;
@@ -44,6 +47,7 @@ body {
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
+
 .output li:hover:before {
     background: #337AB7;
     color: #FFF;
@@ -52,6 +56,7 @@ body {
     -o-transform: translate(-32px, 0);
     transform: translate(-32px, 0);
 }
+
 .output li:after {
     content: "";
     position: absolute;
@@ -66,6 +71,7 @@ body {
     top: 0;
     width: 0;
 }
+
 .output li:hover:after {
     width: 100%;
 }
@@ -74,7 +80,8 @@ body {
     margin-top: 450px;
 }
 
-.pagination li{
+.pagination li {
+    margin: 30px;
     display: inline;
     border: 0.5px solid #337AB7;
     background: #EBF3FA;
@@ -84,7 +91,7 @@ body {
 /*/////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .user-profile {
-    margin: auto;
+    margin-top: -730px;
     width: 25em; 
     height: 11em;
     background: #fff;
@@ -144,6 +151,11 @@ body {
     font-size: 1.27em;
     font-weight: bold;
 }
+
 .user-profile span:hover {
     color: #daebea;
+}
+
+.title-departments {
+	margin-top: 50px;
 }
