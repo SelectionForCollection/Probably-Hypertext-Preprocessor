@@ -34,6 +34,8 @@ foreach ($data as $el) {
      echo "<li>" . $el[1] . "</li>";
 }
 echo '</ul>';
+$data = $pdo->query("SELECT nickname FROM developers WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$nickname = $data[0][0];
 ?>
 <html>
     <head>
@@ -44,7 +46,7 @@ echo '</ul>';
     <body>
         <div class="user-profile">
             <img class="avatar" src="images/ava.png" />
-            <div class="username">Will Smith</div>
+            <div class="username"><?php echo $nickname ?></div>
             <div class="bio">Senior UI Designer</div>
             <div class="description">
                 I use to design websites and applications
