@@ -11,7 +11,7 @@ if (count($data) == 1 && password_verify($password, $data[0][0])) {
     setcookie("email", $email, time()+3600, "/scripts");
     setcookie("email", $email, time()+3600, "/");
     setcookie("page_control", "index", time()+120, "/");
-    header("Location: ../main.php");
+    header("Location: ../profile.php");
 } else {
     echo '<script language="javascript">';
     echo 'alert("Неверные данные.");';

@@ -5,7 +5,7 @@
         <link type="image/x-icon" href="images/favicon.ico" rel="shortcut icon"/>
     </head>
     <body>
-        <h1 class="title-pen"><span>Вы</span> вошли как</h1>
+        <h1 class="title-pen">Вы вошли как</h1>
         <div class="user-profile">
             <img class="avatar" src="images/ava.png" />
             <div class="username">Will Smith</div>
@@ -16,13 +16,13 @@
             </div>
             <ul class="data">
                 <li>
-                    <span class="entypo-heart"> 127</span>
+                    <span> 127</span>
                 </li>
                 <li>
-                    <span class="entypo-eye"> 853</span>
+                    <span> 853</span>
                 </li>
                 <li>
-                    <span class="entypo-user"> 311</span>
+                    <span> 311</span>
                 </li>
             </ul>
         </div>
