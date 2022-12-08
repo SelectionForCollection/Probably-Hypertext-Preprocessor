@@ -15,7 +15,7 @@ if (count($data) == 1 && password_verify($password, $data[0][0])) {
 } else {
     echo '<script language="javascript">';
     echo 'alert("Неверные данные.");';
-    echo 'location.href="../index.php"';
+    echo 'location.href="../main.php"';
     echo '</script>';
 }
 
