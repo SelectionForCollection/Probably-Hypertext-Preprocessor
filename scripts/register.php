@@ -3,10 +3,11 @@
 $nickname = $_POST["nickname"];
 $email = $_POST["email"];
 $password = $_POST["password"];
+$age = $_POST["age"];
 
 require_once('boot.php');
 
-$data = $pdo->query("SELECT id FROM developers WHERE email='$email';")->fetchAll();
+$data = $pdo->query("SELECT id FROM developer WHERE email='$email';")->fetchAll();
 
 if (count($data) != 0) {
     echo '<script language="javascript">';
@@ -17,7 +18,7 @@ if (count($data) != 0) {
     exit;
 }
 
-$data = $pdo->query("SELECT id FROM developers WHERE nickname='$nickname';")->fetchAll();
+$data = $pdo->query("SELECT id FROM developer WHERE nickname='$nickname';")->fetchAll();
 
 if (count($data) != 0) {
     echo '<script language="javascript">';
@@ -29,7 +30,7 @@ if (count($data) != 0) {
 }
 
 $password = password_hash($password, PASSWORD_BCRYPT);
-$pdo->query("INSERT INTO developers (id, nickname, email, password) VALUES (NULL, '$nickname', '$email', '$password');");
+$pdo->query("INSERT INTO developer (id, nickname, email, password, age) VALUES (NULL, '$nickname', '$email', '$password', $age);");
 header("Location: ../index.php");
 
 ?>

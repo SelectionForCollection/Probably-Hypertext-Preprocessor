@@ -36,16 +36,19 @@ foreach ($data as $el) {
 echo '</ul>';
 $data = $pdo->query("SELECT nickname FROM developers WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $nickname = $data[0][0];
+$data = $pdo->query("SELECT titleRang FROM rang WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$nickname = $data[0][0];
 ?>
 <html>
     <head>
         <title>Main</title>
-        <link type="image/x-icon" href="images/favicon.ico" rel="shortcut icon"/>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
     <body>
         <div class="user-profile">
-            <img class="avatar" src="images/ava.png" />
+            <img class="avatar" src="images/what.jpg" />
             <div class="username"><?php echo $nickname ?></div>
             <div class="bio">Senior UI Designer</div>
             <div class="description">

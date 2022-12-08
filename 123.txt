@@ -1,0 +1,57 @@
+CREATE TABLE `developer` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT,
+  `FIO` VARCHAR(45) NULL DEFAULT NULL,
+  `age` VARCHAR(45) NULL DEFAULT NULL,
+  `rang` INTEGER NULL DEFAULT NULL,
+  `department` INTEGER NULL DEFAULT NULL,
+  `area` INTEGER NULL DEFAULT NULL,
+  `language` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+		
+CREATE TABLE `rang` (
+  `idRang` INTEGER NOT NULL AUTO_INCREMENT,
+  `titleRang` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`idRang`)
+);
+		
+CREATE TABLE `department` (
+  `idDepartment` INTEGER NOT NULL AUTO_INCREMENT,
+  `titleDepartment` VARCHAR(45) NULL DEFAULT NULL,
+  `idProject_project` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`idDepartment`)
+);
+		
+CREATE TABLE `area` (
+  `idArea` INTEGER NOT NULL AUTO_INCREMENT,
+  `titleArea` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`idArea`)
+);
+		
+CREATE TABLE `language` (
+  `idLanguage` INTEGER NOT NULL AUTO_INCREMENT,
+  `titleLanguage` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`idLanguage`)
+);
+		
+CREATE TABLE `project` (
+  `idProject` INTEGER NOT NULL AUTO_INCREMENT,
+  `titleProject` VARCHAR(45) NULL DEFAULT NULL,
+  `idClient_client` INTEGER NULL DEFAULT NULL,
+  `deadline` DECIMAL(10) NULL DEFAULT NULL,
+  `totalCoast` INT(21) NULL DEFAULT NULL,
+  PRIMARY KEY (`idProject`)
+);
+		
+CREATE TABLE `client` (
+  `idClient` INTEGER NOT NULL AUTO_INCREMENT,
+  `titleClient` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`idClient`)
+);
+
+ALTER TABLE `developer` ADD FOREIGN KEY (rang) REFERENCES `rang` (`idRang`);
+ALTER TABLE `developer` ADD FOREIGN KEY (department) REFERENCES `department` (`idDepartment`);
+ALTER TABLE `developer` ADD FOREIGN KEY (area) REFERENCES `area` (`idArea`);
+ALTER TABLE `developer` ADD FOREIGN KEY (language) REFERENCES `language` (`idLanguage`);
+ALTER TABLE `department` ADD FOREIGN KEY (idProject_project) REFERENCES `project` (`idProject`);
+ALTER TABLE `project` ADD FOREIGN KEY (idClient_client) REFERENCES `client` (`idClient`);
