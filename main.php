@@ -63,6 +63,7 @@ echo '</ul>';
                 </li>
             </ul>
         </div>
+        <h1 class="title-departmens">Состоите в отделах:</h1>
         <ul class="pagination">
             <li>
                 <a href="?segment=1">Первая</a>
