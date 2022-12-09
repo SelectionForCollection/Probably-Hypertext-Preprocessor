@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_COOKIE["page_control"])) {
-    if ($_COOKIE["page_control"] <> "index") {
+    if ($_COOKIE["page_control"] <> "toMain") {
         header("Location: /");
     }
 } else header("Location: /");
@@ -37,10 +37,10 @@ echo '</ul>';
 */
 $data = $pdo->query("SELECT nickname FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $nickname = $data[0][0];
-/*
-$data = $pdo->query("SELECT titleRang FROM rang WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
-$nickname = $data[0][0];
-*/
+
+$data = $pdo->query("SELECT rang.titlerang FROM developer LEFT JOIN rang ON developer.rang=rang.idRang WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$rang = $data[0][0];
+
 ?>
 <html>
     <head>
@@ -52,8 +52,8 @@ $nickname = $data[0][0];
     <body>
         <div class="user-profile">
             <img class="avatar" src="images/what.jpg" />
-            <div class="username"><?php echo $nickname ?></div>
-            <div class="bio">Senior UI Designer</div>
+            <div class="username"><?php echo $nickname; ?></div>
+            <div class="bio"><?php echo $rang; ?>></div>
             <div class="description">
                 I use to design websites and applications
                 for the web.

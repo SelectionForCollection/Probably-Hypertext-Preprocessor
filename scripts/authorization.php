@@ -10,8 +10,13 @@ $data = $pdo->query("SELECT password FROM developer WHERE email='$email';")->fet
 if (count($data) == 1 && password_verify($password, $data[0][0])) {
     setcookie("email", $email, time()+3600, "/scripts");
     setcookie("email", $email, time()+3600, "/");
-    setcookie("page_control", "index", time()+120, "/");
-    header("Location: ../main.php");
+    if ($email != "admin@admin") {
+        setcookie("page_control", "toMain", time()+120, "/");
+        header("Location: ../main.php");
+    } else {
+        setcookie("page_control", "toAdministration", time()+120, "/");
+        header("Location: ../administration.php");
+    }
 } else {
     echo '<script language="javascript">';
     echo 'alert("Неверные данные.");';

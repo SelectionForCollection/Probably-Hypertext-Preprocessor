@@ -14,7 +14,7 @@ body {
     opacity: 0.6;
 }
 
-.output {
+/* .output {
     margin-top: 400px;
     padding: 0;
     list-style: none;
@@ -74,9 +74,9 @@ body {
 
 .output li:hover:after {
     width: 100%;
-}
+} */
 
-.pagination {
+/* .pagination {
     margin-top: 450px;
 }
 
@@ -86,11 +86,11 @@ body {
     border: 0.5px solid #337AB7;
     background: #EBF3FA;
     padding: 6px 3px;
-}
+} */
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.user-profile {
+/* .user-profile {
     margin-top: -730px;
     width: 25em; 
     height: 11em;
@@ -154,7 +154,7 @@ body {
 
 .user-profile span:hover {
     color: #daebea;
-}
+} */
 
 .title-departments {
 	margin-top: 50px;
