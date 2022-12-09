@@ -17,12 +17,12 @@ if (isset($_GET['segment'])) {
 $size = 5;
 $offset = ($segment-1) * $size;
 
-$data = $pdo->query("SELECT COUNT(*) FROM departments;")->fetch();
+$data = $pdo->query("SELECT COUNT(*) FROM department;")->fetch();
 $total_rows = $data[0];
 
 $total_pages = ceil($total_rows / $size);
-
-$data = $pdo->query("SELECT id FROM developers WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+/*
+$data = $pdo->query("SELECT id FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $idUser = $data[0][0];
 $data = $pdo->query("SELECT nickname, title FROM developers
                      LEFT JOIN dev_dep ON developers.id=dev_dep.id_dev
@@ -34,10 +34,13 @@ foreach ($data as $el) {
      echo "<li>" . $el[1] . "</li>";
 }
 echo '</ul>';
-$data = $pdo->query("SELECT nickname FROM developers WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+*/
+$data = $pdo->query("SELECT nickname FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $nickname = $data[0][0];
+/*
 $data = $pdo->query("SELECT titleRang FROM rang WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $nickname = $data[0][0];
+*/
 ?>
 <html>
     <head>
