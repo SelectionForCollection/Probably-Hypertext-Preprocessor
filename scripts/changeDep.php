@@ -1,6 +1,6 @@
 <?php
-    $dev = $_POST["firstDevs"];
-    $dep = $_POST["firstDeps"];
+    $dev = $_POST["1Devs"];
+    $dep = $_POST["Deps"];
 
     require_once("boot.php");
 

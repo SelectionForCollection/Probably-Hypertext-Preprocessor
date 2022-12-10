@@ -17,9 +17,9 @@ require_once('scripts/boot.php');
         <link rel="stylesheet" href="styles/administration.css" type="text/css"/>
     </head>
     <body>
-        <form action="scripts/addToDep.php" method="POST">
+        <form action="scripts/changeDep.php" method="POST">
             <h1>Добавить </h1>
-            <select name="firstDevs">
+            <select name="1Devs">
                 <?php
                     $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
                     foreach ($data as $el) {
@@ -28,9 +28,72 @@ require_once('scripts/boot.php');
                 ?>
             </select>
             <h1> к отделу </h1>
-            <select name="firstDeps">
+            <select name="Deps">
                 <?php
                     $data = $pdo->query("SELECT titleDepartment FROM department;")->fetchAll();
+                    foreach ($data as $el) {
+                        echo '<option value="' . $el[0] . '">' . $el[0] . '</option>';
+                    }
+                ?>
+            </select>
+            <button>Добавить</button>
+        </form>
+        <form action="scripts/changeRang.php" method="POST">
+            <h1>Присвоить </h1>
+            <select name="2Devs">
+                <?php
+                    $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
+                    foreach ($data as $el) {
+                        echo '<option value="' . $el[0] . '">' . $el[0] . '</option>';
+                    }
+                ?>
+            </select>
+            <h1> уровень </h1>
+            <select name="Rangs">
+                <?php
+                    $data = $pdo->query("SELECT titleRang FROM rang;")->fetchAll();
+                    foreach ($data as $el) {
+                        echo '<option value="' . $el[0] . '">' . $el[0] . '</option>';
+                    }
+                ?>
+            </select>
+            <button>Добавить</button>
+        </form>
+        <form action="scripts/changeArea.php" method="POST">
+            <h1>Изменить область для </h1>
+            <select name="3Devs">
+                <?php
+                    $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
+                    foreach ($data as $el) {
+                        echo '<option value="' . $el[0] . '">' . $el[0] . '</option>';
+                    }
+                ?>
+            </select>
+            <h1> на </h1>
+            <select name="Areas">
+                <?php
+                    $data = $pdo->query("SELECT titleArea FROM area;")->fetchAll();
+                    foreach ($data as $el) {
+                        echo '<option value="' . $el[0] . '">' . $el[0] . '</option>';
+                    }
+                ?>
+            </select>
+            <button>Добавить</button>
+        </form>
+        <form action="scripts/changeLanguage.php" method="POST">
+            <h1>Изменить основной язык для </h1>
+            <select name="4Devs">
+                <?php
+                    $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
+                    foreach ($data as $el) {
+                        echo '<option value="' . $el[0] . '">' . $el[0] . '</option>';
+                    }
+                ?>
+            </select>
+            <h1> на </h1>
+            <select name="Languages">
+                <?php
+                    $data = $pdo->query("SELECT titleLanguage FROM language;")->fetchAll();
                     foreach ($data as $el) {
                         echo '<option value="' . $el[0] . '">' . $el[0] . '</option>';
                     }
