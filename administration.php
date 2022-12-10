@@ -17,7 +17,7 @@ require_once('scripts/boot.php');
         <link rel="stylesheet" href="styles/administration.css" type="text/css"/>
     </head>
     <body>
-        <form action="scripts/changeDep.php" method="POST">
+        <form class="administration" action="scripts/changeDep.php" method="POST">
             <h1>Добавить </h1>
             <select name="1Devs">
                 <?php
@@ -38,7 +38,7 @@ require_once('scripts/boot.php');
             </select>
             <button>Добавить</button>
         </form>
-        <form action="scripts/changeRang.php" method="POST">
+        <form class="administration" action="scripts/changeRang.php" method="POST">
             <h1>Присвоить </h1>
             <select name="2Devs">
                 <?php
@@ -59,7 +59,7 @@ require_once('scripts/boot.php');
             </select>
             <button>Добавить</button>
         </form>
-        <form action="scripts/changeArea.php" method="POST">
+        <form class="administration" action="scripts/changeArea.php" method="POST">
             <h1>Изменить область для </h1>
             <select name="3Devs">
                 <?php
@@ -80,7 +80,7 @@ require_once('scripts/boot.php');
             </select>
             <button>Добавить</button>
         </form>
-        <form action="scripts/changeLanguage.php" method="POST">
+        <form class="administration" action="scripts/changeLanguage.php" method="POST">
             <h1>Изменить основной язык для </h1>
             <select name="4Devs">
                 <?php
