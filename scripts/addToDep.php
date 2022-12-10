@@ -1,5 +1,6 @@
 <?php
 
+    print_r($_POST["firstDevs"]);
     print_r($_POST);
 
     require_once("scripts/boot.php");
