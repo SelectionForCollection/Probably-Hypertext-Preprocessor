@@ -20,8 +20,8 @@ require_once('scripts/boot.php');
         <select>
             <?php
                 $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
-                foreach ($data[0] as $n=>$opt) {
-                     printf('<option value="%s">%s</option>', $n, $opt);
+                foreach ($data as $n=>$opt) {
+                    printf('<option value="%s">%s</option>', $n, $opt);
                 }
             ?>
         </select>
