@@ -1,9 +1,12 @@
 <?php
 
-    // require_once("scripts/boot.php");
+    require_once("scripts/boot.php");
 
-    // // echo $_POST["firstDevs"];
-    // // echo $_POST["firstDeps"];
-    // var_dump($_POST);
-    print_r($_POST);
+    $dev = $_POST["firstDevs"];
+    $dep = $_POST["firstDeps"];
+    
+    $data = $pdo->query("SELECT idDepartment FROM department WHERE titleDepartment = '" . $dep . "';")->fetchAll();
+    $pdo->query("UPDATE developer SET department = " . $data[0][0] . " WHERE developer.nickname = '" . $dev . "';");
+
+    header("Location: ../administration.php");
 ?>
