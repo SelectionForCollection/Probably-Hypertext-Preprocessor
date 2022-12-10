@@ -53,7 +53,7 @@ $rang = $data[0][0];
         <div class="user-profile">
             <img class="avatar" src="images/what.jpg" />
             <div class="username"><?php echo $nickname; ?></div>
-            <div class="bio"><?php echo $rang; ?>></div>
+            <div class="bio"><?php echo $rang; ?></div>
             <div class="description">
                 I use to design websites and applications
                 for the web.
