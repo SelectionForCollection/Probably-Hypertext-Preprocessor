@@ -20,9 +20,15 @@ require_once('scripts/boot.php');
         <select>
             <?php
                 $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
+                var_dump($data);
                 foreach ($data as $el) {
-                    printf('<option value="' . $el[1] . '">' . $el[1] . '</option>');
+                    echo '<option value="' . $el[1] . '">' . $el[1] . '</option>';
                 }
+                echo "Dalshe impovization\n";
+                echo "data[1] - " . $data[1];
+                echo "data[1][0] -" . $data[1][0];
+                echo "data[1] - " . $data[1];
+                echo "data[1][0] -" . $data[1][0];
             ?>
         </select>
     </body>
