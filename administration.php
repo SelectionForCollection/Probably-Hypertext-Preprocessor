@@ -18,8 +18,8 @@ require_once('scripts/boot.php');
     </head>
     <body>
         <form class="administration" action="scripts/changeDep.php" method="POST">
-            <h1>Добавить </h1>
-            <select name="1Devs">
+            <h1 class="right-label">Изменить отдел для</h1>
+            <select class="right-select" name="1Devs">
                 <?php
                     $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
                     foreach ($data as $el) {
@@ -27,7 +27,7 @@ require_once('scripts/boot.php');
                     }
                 ?>
             </select>
-            <h1> к отделу </h1>
+            <h1>на</h1>
             <select name="Deps">
                 <?php
                     $data = $pdo->query("SELECT titleDepartment FROM department;")->fetchAll();
@@ -39,8 +39,8 @@ require_once('scripts/boot.php');
             <button>Добавить</button>
         </form>
         <form class="administration" action="scripts/changeRang.php" method="POST">
-            <h1>Присвоить </h1>
-            <select name="2Devs">
+            <h1 class="right-label">Изменить уровень для</h1>
+            <select class="right-select" name="2Devs">
                 <?php
                     $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
                     foreach ($data as $el) {
@@ -48,7 +48,7 @@ require_once('scripts/boot.php');
                     }
                 ?>
             </select>
-            <h1> уровень </h1>
+            <h1>на</h1>
             <select name="Rangs">
                 <?php
                     $data = $pdo->query("SELECT titleRang FROM rang;")->fetchAll();
@@ -60,8 +60,8 @@ require_once('scripts/boot.php');
             <button>Добавить</button>
         </form>
         <form class="administration" action="scripts/changeArea.php" method="POST">
-            <h1>Изменить область для </h1>
-            <select name="3Devs">
+            <h1 class="right-label">Изменить область для</h1>
+            <select class="right-select" name="3Devs">
                 <?php
                     $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
                     foreach ($data as $el) {
@@ -69,7 +69,7 @@ require_once('scripts/boot.php');
                     }
                 ?>
             </select>
-            <h1> на </h1>
+            <h1>на</h1>
             <select name="Areas">
                 <?php
                     $data = $pdo->query("SELECT titleArea FROM area;")->fetchAll();
@@ -81,8 +81,8 @@ require_once('scripts/boot.php');
             <button>Добавить</button>
         </form>
         <form class="administration" action="scripts/changeLanguage.php" method="POST">
-            <h1>Изменить основной язык для </h1>
-            <select name="4Devs">
+            <h1 class="right-label">Изменить основной язык для</h1>
+            <select class="right-select" name="4Devs">
                 <?php
                     $data = $pdo->query("SELECT nickname FROM developer;")->fetchAll();
                     foreach ($data as $el) {
@@ -90,7 +90,7 @@ require_once('scripts/boot.php');
                     }
                 ?>
             </select>
-            <h1> на </h1>
+            <h1>на</h1>
             <select name="Languages">
                 <?php
                     $data = $pdo->query("SELECT titleLanguage FROM language;")->fetchAll();
