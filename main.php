@@ -51,7 +51,7 @@ $data = $pdo->query("SELECT language.titleLanguage FROM developer LEFT JOIN lang
 $language = $data[0][0];
 
 $data = $pdo->query("SELECT area.titleArea FROM developer LEFT JOIN area ON developer.area=area.idArea WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
-$language = $data[0][0];
+$area = $data[0][0];
 ?>
 <html>
     <head>
