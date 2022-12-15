@@ -79,8 +79,8 @@ $area = $data[0][0];
                         </div>
                         <div class="stats">
                             <div>
-                                <div class="title">Awards</div>
-                                    <i class="fa fa-trophy"></i>
+                                <div class="title">Язык</div>
+                                    <img src="images/code-solid.svg"/>
                                 <div class="value">2</div>
                             </div>
                             <div>
