@@ -79,24 +79,16 @@ $area = $data[0][0];
                         </div>
                         <div class="stats">
                             <div>
-                                <div class="title">Язык</div>
-                                    <img width="24" height="24" src="images/code-solid.svg"/>
-                                <div class="value">2</div>
+                                <img width="24" height="24" src="images/code-solid.svg"/>
+                                <div class="value"><?php echo $language ?></div>
                             </div>
                             <div>
-                                <div class="title">Matches</div>
-                                    <i class="fa fa-gamepad"></i>
-                                <div class="value">27</div>
+                                <img width="24" height="24" src="images/compass-regular.svg"/>
+                                <div class="value"><?php echo $area ?></div>
                             </div>
                             <div>
-                                <div class="title">Pals</div>
-                                    <i class="fa fa-group"></i>
-                                <div class="value">123</div>
-                            </div>
-                            <div>
-                                <div class="title">Coffee</div>
-                                    <i class="fa fa-coffee"></i>
-                                <div class="value infinity">∞</div>
+                                <img width="24" height="24" src="images/house-laptop-solid.svg"/>
+                                <div class="value"><?php echo $dep ?></div>
                             </div>
                         </div>
                     </div>
