@@ -61,22 +61,52 @@ $area = $data[0][0];
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
     <body>
-        <div class="user-profile">
-            <img class="avatar" src="images/what.jpg" />
-            <div class="username"><?php echo $nickname; ?></div>
-            <div class="rang"><?php echo $rang; ?></div>
-            <div class="department"><?php echo $dep; ?></div>
-            <ul class="data">
-                <li>
-                    <span><?php echo $age; ?> лет</span>
-                </li>
-                <li>
-                    <span>язык <?php echo $language; ?></span>
-                </li>
-                <li>
-                    <span>область <?php echo $area; ?></span>
-                </li>
-            </ul>
+        <div class="center">
+            <div class="card">
+                <div class="additional">
+                    <div class="user-card">
+                        <img class="center" src="images/what.jpg" wigth="100" height="100"/>
+                    </div>
+                    <div class="more-info">
+                        <h1><?php echo $nickname; ?></h1>
+                        <div class="coords">
+                            <span>Group Name</span>
+                            <span><?php echo $age; ?> лет</span>
+                        </div>
+                        <div class="coords">
+                            <span>Position/Role</span>
+                            <span>City, Country</span>
+                        </div>
+                        <div class="stats">
+                            <div>
+                                <div class="title">Awards</div>
+                                <i class="fa fa-trophy"></i>
+                                <div class="value">2</div>
+                            </div>
+                            <div>
+                                <div class="title">Matches</div>
+                                <i class="fa fa-gamepad"></i>
+                                <div class="value">27</div>
+                            </div>
+                            <div>
+                                <div class="title">Pals</div>
+                                <i class="fa fa-group"></i>
+                                <div class="value">123</div>
+                            </div>
+                            <div>
+                                <div class="title">Coffee</div>
+                                <i class="fa fa-coffee"></i>
+                                <div class="value infinity">∞</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="general">
+                    <h1>Jane Doe</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
+                    <span class="more">Mouse over the card for more info</span>
+                </div>
+            </div>
         </div>
         <h1 class="title-departments">Состоите в отделах:</h1>
         <ul class="pagination">
