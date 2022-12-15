@@ -80,7 +80,7 @@ $area = $data[0][0];
                         <div class="stats">
                             <div>
                                 <div class="title">Язык</div>
-                                    <img src="images/code-solid.svg"/>
+                                    <img width="24" height="24" src="images/code-solid.svg"/>
                                 <div class="value">2</div>
                             </div>
                             <div>
