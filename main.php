@@ -70,41 +70,40 @@ $area = $data[0][0];
                     <div class="more-info">
                         <h1><?php echo $nickname; ?></h1>
                         <div class="coords">
-                            <span>Group Name</span>
+                            <span>Возраст</span>
                             <span><?php echo $age; ?> лет</span>
                         </div>
                         <div class="coords">
-                            <span>Position/Role</span>
-                            <span>City, Country</span>
+                            <span>Уровень</span>
+                            <span><?php echo $rang; ?></span>
                         </div>
                         <div class="stats">
                             <div>
                                 <div class="title">Awards</div>
-                                <i class="fa fa-trophy"></i>
+                                    <i class="fa fa-trophy"></i>
                                 <div class="value">2</div>
                             </div>
                             <div>
                                 <div class="title">Matches</div>
-                                <i class="fa fa-gamepad"></i>
+                                    <i class="fa fa-gamepad"></i>
                                 <div class="value">27</div>
                             </div>
                             <div>
                                 <div class="title">Pals</div>
-                                <i class="fa fa-group"></i>
+                                    <i class="fa fa-group"></i>
                                 <div class="value">123</div>
                             </div>
                             <div>
                                 <div class="title">Coffee</div>
-                                <i class="fa fa-coffee"></i>
+                                    <i class="fa fa-coffee"></i>
                                 <div class="value infinity">∞</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="general">
-                    <h1>Jane Doe</h1>
+                    <h1><?php echo $nickname; ?></h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
-                    <span class="more">Mouse over the card for more info</span>
                 </div>
             </div>
         </div>
