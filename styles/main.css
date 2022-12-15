@@ -1,161 +1,177 @@
-body {
-    margin:0px;
-    padding:0px;
-    font-family: "Open Sans", arial;
-    background-color: #FF420E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+html, body {
+  background: #FCEEB5;
+  font-family: Abel, Arial, Verdana, sans-serif;
 }
 
-.disabled {
-    pointer-events: none;
-    opacity: 0.6;
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
 }
 
-/* .output {
-    margin-top: 400px;
-    padding: 0;
-    list-style: none;
-    counter-reset: li;
+.card {
+  width: 450px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
 }
 
-.output li {
-    border: 2px solid #337AB7;
-    background: #EBF3FA;
-    position: relative;
-    margin-bottom: 20px;
-    padding: 16px 30px;
+.card h1 {
+  text-align: center;
 }
 
-.output li:hover {
-    z-index: 1;
+.card .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#dE685E, #EE786E);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
 }
 
-.output li:before {
-    border: 2px solid #337AB7;
-    position: absolute;
-    top: -14px;
-    padding: 2px 10px;
-    font-size: 11px;
-    font-weight: bold;
-    color: #337AB7;
-    background: #F7FAFD;
-    counter-increment: li;
-    content: counter(li);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+.card.green .additional {
+  background: linear-gradient(#92bCa6, #A2CCB6);
 }
 
-.output li:hover:before {
-    background: #337AB7;
-    color: #FFF;
-    -webkit-transform: translate(-32px, 0);
-    -ms-transform: translate(-32px, 0);
-    -o-transform: translate(-32px, 0);
-    transform: translate(-32px, 0);
+
+.card:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
 }
 
-.output li:after {
-    content: "";
-    position: absolute;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    -webkit-transition-property: width;
-    transition-property: width;
-    z-index: -1;
-    background: #FFF;
-    height: 100%;
-    left: 0;
-    top: 0;
-    width: 0;
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
 }
 
-.output li:hover:after {
-    width: 100%;
-} */
-
-/* .pagination {
-    margin-top: 450px;
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);*/
 }
 
-.pagination li {
-    margin: 30px;
-    display: inline;
-    border: 0.5px solid #337AB7;
-    background: #EBF3FA;
-    padding: 6px 3px;
-} */
-
-/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-/* .user-profile {
-    margin-top: -730px;
-    width: 25em; 
-    height: 11em;
-    background: #fff;
-    border-radius: .3em;
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
 }
 
-.user-profile  .username {
-    margin: auto;
-    margin-top: -4.40em;
-    margin-left: 5.80em;
-    color: #658585;
-    font-size: 1.53em;
-    font-weight: bold;
-}
-.user-profile  .bio {
-    margin: auto;
-    display: inline-block;
-    margin-left: 10.43em;
-    color: #e76043; 
-    font-size: .87em;
-}
-.user-profile > .description {
-    margin: auto;
-    margin-top: 1.35em;
-    margin-right: 4.43em;
-    width: 14em;
-    color: #c0c5c5; 
-    font-size: .87em;
-}
-.user-profile > img.avatar {
-	padding: .7em;
-    margin-left: .3em;
-    margin-top: .3em;
-    height: 6.23em;
-    width: 6.23em;
-    border-radius: 18em;
+.card .additional .user-card .points {
+  top: 85%;
 }
 
-.user-profile ul.data {
-	margin: 2em auto;
-	height: 3.70em;
-    background: #4eb6b6;
-    text-align: center;
-    border-radius: 0 0 .3em .3em;
-}
-.user-profile li {
-	margin: 0 auto;
-    padding: 1.30em; 
-    width: 33.33334%;
-    display: table-cell;
-    text-align: center;
+.card .additional .user-card svg {
+  top: 50%;
 }
 
-.user-profile span {
-	color: #e3eeee;
-    white-space: nowrap;
-    font-size: 1.27em;
-    font-weight: bold;
+.card .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
 }
 
-.user-profile span:hover {
-    color: #daebea;
-} */
+.card .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
 
-.title-departments {
-	margin-top: 50px;
+.card.green .additional .more-info h1 {
+  color: #224C36;
+}
+
+.card .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card.green .additional .coords {
+  color: #325C46;
+}
+
+.card .additional .coords span + span {
+  float: right;
+}
+
+.card .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.card.green .additional .stats {
+  color: #325C46;
+}
+
+.card .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.card .additional .stats i {
+  display: block;
+}
+
+.card .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.card .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.card .general {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.card .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
 }
