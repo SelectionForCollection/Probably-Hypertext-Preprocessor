@@ -11,10 +11,10 @@ if (count($data) == 1 && password_verify($password, $data[0][0])) {
     setcookie("email", $email, time()+3600, "/scripts");
     setcookie("email", $email, time()+3600, "/");
     if ($email != "admin@admin") {
-        setcookie("page_control", "toMain", time()+120, "/");
+        setcookie("page_control", "toMain", time()+3600, "/");
         header("Location: ../main.php");
     } else {
-        setcookie("page_control", "toAdministration", time()+120, "/");
+        setcookie("page_control", "toAdministration", time()+3600, "/");
         header("Location: ../administration.php");
     }
 } else {

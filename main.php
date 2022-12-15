@@ -38,9 +38,20 @@ echo '</ul>';
 $data = $pdo->query("SELECT nickname FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $nickname = $data[0][0];
 
-$data = $pdo->query("SELECT rang.titlerang FROM developer LEFT JOIN rang ON developer.rang=rang.idRang WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$data = $pdo->query("SELECT rang.titleRang FROM developer LEFT JOIN rang ON developer.rang=rang.idRang WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $rang = $data[0][0];
 
+$data = $pdo->query("SELECT department.titleDepartment FROM developer LEFT JOIN department ON developer.department=department.idDepartment WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$dep = $data[0][0];
+
+$data = $pdo->query("SELECT age FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$age = $data[0][0];
+
+$data = $pdo->query("SELECT language.titleLanguage FROM developer LEFT JOIN language ON developer.language=language.idLanguage WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$language = $data[0][0];
+
+$data = $pdo->query("SELECT area.titleArea FROM developer LEFT JOIN area ON developer.area=area.idArea WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$language = $data[0][0];
 ?>
 <html>
     <head>
@@ -53,20 +64,17 @@ $rang = $data[0][0];
         <div class="user-profile">
             <img class="avatar" src="images/what.jpg" />
             <div class="username"><?php echo $nickname; ?></div>
-            <div class="bio"><?php echo $rang; ?></div>
-            <div class="description">
-                I use to design websites and applications
-                for the web.
-            </div>
+            <div class="rang"><?php echo $rang; ?></div>
+            <div class="department"><?php echo $dep; ?></div>
             <ul class="data">
                 <li>
-                    <span> 127</span>
+                    <span><?php echo $age; ?> лет</span>
                 </li>
                 <li>
-                    <span> 853</span>
+                    <span>язык <?php echo $language; ?></span>
                 </li>
                 <li>
-                    <span> 311</span>
+                    <span>область <?php echo $area; ?></span>
                 </li>
             </ul>
         </div>
