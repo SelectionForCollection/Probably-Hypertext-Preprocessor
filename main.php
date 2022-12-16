@@ -51,7 +51,7 @@ $data = $pdo->query("SELECT project.titleProject FROM department_project
 
 echo '<div class="projects"><ul class="output">';
 foreach ($data as $el) {
-     echo "<li>" . $el[0] . "</li>";
+     echo "<li><a href='/project.php?=project=$el[0]'>" . $el[0] . "</a></li>";
 }
 echo '</ul></div>';
 
