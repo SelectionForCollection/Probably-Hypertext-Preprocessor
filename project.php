@@ -8,7 +8,7 @@ if (isset($_GET['project'])) {
     header("Location: /index.php");
 }
 
-$data = $pdo->query("SELECT id FROM project WHERE titleProject = '$project';")->fetchAll();
+$data = $pdo->query("SELECT idProject FROM project WHERE titleProject = '$project';")->fetchAll();
 print_r($data);
 exit;
 if ($data[0])
