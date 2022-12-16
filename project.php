@@ -28,15 +28,20 @@ $coast = $data[0][0];
         <link rel="stylesheet" href="styles/project.css" type="text/css" />
     </head>
     <body>
-        <div class="container">
-            <div class="qr-code-image">
-                <img src="images/qrcode_github.com.png">
-                <div class="text-qr-card">
-                    <h2><?php echo $project; ?></h2>
-                    <h2>Заказчик <?php echo $client; ?></h2>
-                    <h2>Срок сдачи <?php echo $deadline; ?></h2>
-                    <h2>Цена <span><?php echo $coast; ?></span></h2>
-                </div>
+        <img class="center" src="images/qrcode_github.com.png">
+        <div class="main">
+            <h2 class="titleProject"><?php echo $project; ?></h2>
+            <div>
+                <h2>Заказчик</h2>
+                <span><?php echo $client; ?></span>
+            </div>
+            <div>
+                <h2>Срок сдачи</h2>
+                <span><?php echo $deadline; ?></span>
+            </div>
+            <div>
+                <h2>Цена</h2>
+                <span><?php echo $coast; ?></span>
             </div>
         </div>
     </body>
