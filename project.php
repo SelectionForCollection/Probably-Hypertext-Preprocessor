@@ -14,7 +14,6 @@ if ($data[0] == null) {
     echo 'alert("Такой проект отсутствует. Проверьту написание или отдел.");';
     echo 'location.href="project.php"';
     echo '</script>';
-    exit;
 }
 
 $data = $pdo->query("SELECT idProject FROM project WHERE titleProject = '$project';")->fetchAll();
