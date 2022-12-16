@@ -1,5 +1,7 @@
 <?php
 
+$email = $_COOKIE["email"];
+
 if (isset($_COOKIE["page_control"])) {
     if ($_COOKIE["page_control"] <> "toMain") {
         header("Location: /");
@@ -17,22 +19,22 @@ if (isset($_GET['segment'])) {
 $size = 5;
 $offset = ($segment-1) * $size;
 
-$data = $pdo->query("SELECT nickname FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$data = $pdo->query("SELECT nickname FROM developer WHERE email='$email';")->fetchAll();
 $nickname = $data[0][0];
 
-$data = $pdo->query("SELECT rang.titleRang FROM developer LEFT JOIN rang ON developer.rang=rang.idRang WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$data = $pdo->query("SELECT rang.titleRang FROM developer LEFT JOIN rang ON developer.rang=rang.idRang WHERE email='$email';")->fetchAll();
 $rang = $data[0][0];
 
-$data = $pdo->query("SELECT department.titleDepartment FROM developer LEFT JOIN department ON developer.department=department.idDepartment WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$data = $pdo->query("SELECT department.titleDepartment FROM developer LEFT JOIN department ON developer.department=department.idDepartment WHERE email='$email';")->fetchAll();
 $dep = $data[0][0];
 
-$data = $pdo->query("SELECT age FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$data = $pdo->query("SELECT age FROM developer WHERE email='$email';")->fetchAll();
 $age = $data[0][0];
 
-$data = $pdo->query("SELECT language.titleLanguage FROM developer LEFT JOIN language ON developer.language=language.idLanguage WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$data = $pdo->query("SELECT language.titleLanguage FROM developer LEFT JOIN language ON developer.language=language.idLanguage WHERE email='$email';")->fetchAll();
 $language = $data[0][0];
 
-$data = $pdo->query("SELECT area.titleArea FROM developer LEFT JOIN area ON developer.area=area.idArea WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+$data = $pdo->query("SELECT area.titleArea FROM developer LEFT JOIN area ON developer.area=area.idArea WHERE email='$email';")->fetchAll();
 $area = $data[0][0];
 
 $data = $pdo->query("SELECT idDepartment FROM department WHERE titleDepartment = '$dep';")->fetchAll();
@@ -43,16 +45,13 @@ $total_rows = $data[0];
 
 $total_pages = ceil($total_rows / $size);
 
-// $data = $pdo->query("SELECT id FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
-// $idUser = $data[0][0];
 $data = $pdo->query("SELECT project.titleProject FROM department_project LEFT JOIN project ON department_project.idProject=project.idProject WHERE idDepartment = $idDep;")->fetchAll();
-var_dump($data);
-print_r($data);
-echo '<ul class="output">';
+
+echo '<div class="third"><ul class="output">';
 foreach ($data as $el) {
-     echo "<li>" . $el[0][0] . "</li>";
+     echo "<li>" . $el[0] . "</li>";
 }
-echo '</ul>';
+echo '</ul></div>';
 
 
 ?>
