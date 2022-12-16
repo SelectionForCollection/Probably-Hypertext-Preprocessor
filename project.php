@@ -2,7 +2,10 @@
 if (isset($_GET['project'])) {
     $project = $_GET['project'];
 } else {
-    $project = "ниче не получилось";
+    echo '<script language="javascript">';
+    echo 'alert("Такой проект отсутствует. Проверьту написание или отдел.");';
+    echo 'location.href="project.php"';
+    echo '</script>';
 }
 
 require_once('scripts/boot.php');

@@ -1,6 +1,9 @@
 <html>
     <head>
-        <link rel="stylesheet" href="styles/index.css" type="text/css"/>
+        <title>Auth</title>
+        <link rel="stylesheet" href="styles/index.css" type="text/css" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     </head>
     <body>
         <form action="scripts/authorization.php" method="POST">
