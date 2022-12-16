@@ -22,10 +22,17 @@ html, body {
     width: 450px;
 }
 
-.main h2 {
+.titleProject {
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.left {
     float: left;
 }
 
-.main span {
+.right {
     float: right;
 }
