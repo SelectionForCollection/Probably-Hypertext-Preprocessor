@@ -45,7 +45,9 @@ $total_rows = $data[0];
 
 $total_pages = ceil($total_rows / $size);
 
-$data = $pdo->query("SELECT project.titleProject FROM department_project LEFT JOIN project ON department_project.idProject=project.idProject WHERE idDepartment = $idDep;")->fetchAll();
+$data = $pdo->query("SELECT project.titleProject FROM department_project 
+                    LEFT JOIN project ON department_project.idProject=project.idProject
+                    WHERE idDepartment = $idDep LIMIT $offset, $size;")->fetchAll();
 
 echo '<div class="projects"><ul class="output">';
 foreach ($data as $el) {
