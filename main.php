@@ -68,7 +68,7 @@ $area = $data[0][0];
                         <img class="center" src="images/what_after.jpg" wigth="100" height="100"/>
                     </div>
                     <div class="more-info">
-                        <h1><?php echo $nickname; ?></h1>
+                        <h1 class="center"><?php echo $nickname; ?></h1>
                         <div class="coords">
                             <span>Возраст</span>
                             <span><?php echo $age; ?> лет</span>
