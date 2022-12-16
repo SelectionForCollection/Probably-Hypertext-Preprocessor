@@ -10,8 +10,13 @@ if (isset($_GET['project'])) {
 
 $data = $pdo->query("SELECT idProject FROM project WHERE titleProject = '$project';")->fetchAll();
 print_r($data);
+if ($data[0] == null) {
+    echo "1";
+} else {
+    echo "0";
+}
 exit;
-if ($data[0])
+
 echo '<script language="javascript">';
 echo 'alert("Такой проект отсутствует. Проверьту написание или отдел.");';
 echo 'location.href="project.php"';
