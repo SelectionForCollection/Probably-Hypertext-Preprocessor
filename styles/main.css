@@ -13,7 +13,7 @@ html, body {
 }
 
 .card {
-  width: 450px;
+  width: 515px;
   height: 250px;
   background-color: #fff;
   background: linear-gradient(#f8f8f8, #fff);
@@ -37,11 +37,6 @@ html, body {
   overflow: hidden;
   z-index: 2;
 }
-
-.card.green .additional {
-  background: linear-gradient(#92bCa6, #A2CCB6);
-}
-
 
 .card:hover .additional {
   width: 100%;
@@ -82,12 +77,8 @@ html, body {
   top: 85%;
 }
 
-.card .additional .user-card svg {
-  top: 50%;
-}
-
 .card .additional .more-info {
-  width: 300px;
+  width: 365px;
   float: left;
   position: absolute;
   left: 150px;
@@ -99,18 +90,10 @@ html, body {
   margin-bottom: 0;
 }
 
-.card.green .additional .more-info h1 {
-  color: #224C36;
-}
-
 .card .additional .coords {
   margin: 0 1rem;
   color: #fff;
   font-size: 1rem;
-}
-
-.card.green .additional .coords {
-  color: #325C46;
 }
 
 .card .additional .coords span + span {
@@ -128,13 +111,10 @@ html, body {
   color: #fff;
 }
 
-.card.green .additional .stats {
-  color: #325C46;
-}
-
 .card .additional .stats > div {
   flex: 1;
   text-align: center;
+  margin: 5px;
 }
 
 .card .additional .stats i {
@@ -158,7 +138,7 @@ html, body {
 }
 
 .card .general {
-  width: 300px;
+  width: 365px;
   height: 100%;
   position: absolute;
   top: 0;

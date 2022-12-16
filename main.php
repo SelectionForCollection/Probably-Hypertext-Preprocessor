@@ -61,7 +61,7 @@ $area = $data[0][0];
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
     </head>
     <body>
-        <div class="center">
+        <div class="main">
             <div class="card">
                 <div class="additional">
                     <div class="user-card">
@@ -71,7 +71,7 @@ $area = $data[0][0];
                         <h1><?php echo $nickname; ?></h1>
                         <div class="coords">
                             <span>Возраст</span>
-                            <span><?php echo $age; ?> лет</span>
+                            <span><?php echo $age; ?></span>
                         </div>
                         <div class="coords">
                             <span>Уровень</span>
