@@ -155,3 +155,10 @@ html, body {
   right: 1rem;
   font-size: 0.9em;
 }
+
+.main {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+  }

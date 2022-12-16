@@ -99,20 +99,22 @@ $area = $data[0][0];
                 </div>
             </div>
         </div>
-        <h1 class="title-departments">Состоите в отделах:</h1>
-        <ul class="pagination">
-            <li>
-                <a href="?segment=1">Первая</a>
-            </li>
-            <li class="<?php if($segment <= 1) { echo 'disabled'; } ?>">
-                <a href="<?php if($segment > 1) { echo "?segment=" . ($segment - 1); } ?>">Назад</a>
-            </li>
-            <li class="<?php if($segment >= $total_pages) { echo 'disabled'; } ?>">
-                <a href="<?php if($segment < $total_pages) { echo "?segment=" . ($segment + 1); } ?>">Вперед</a>
-            </li>
-            <li>
-                <a href="?segment=<?php echo $total_pages; ?>">Последняя</a>
-            </li>
-        </ul>
+        <div class="second">
+            <h1 class="title-departments">Состоите в отделах:</h1>
+            <ul class="pagination">
+                <li>
+                    <a href="?segment=1">Первая</a>
+                </li>
+                <li class="<?php if($segment <= 1) { echo 'disabled'; } ?>">
+                    <a href="<?php if($segment > 1) { echo "?segment=" . ($segment - 1); } ?>">Назад</a>
+                </li>
+                <li class="<?php if($segment >= $total_pages) { echo 'disabled'; } ?>">
+                    <a href="<?php if($segment < $total_pages) { echo "?segment=" . ($segment + 1); } ?>">Вперед</a>
+                </li>
+                <li>
+                    <a href="?segment=<?php echo $total_pages; ?>">Последняя</a>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
