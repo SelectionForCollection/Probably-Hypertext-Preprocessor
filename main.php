@@ -60,9 +60,9 @@ echo '</ul></div>';
 <html>
     <head>
         <title>Main</title>
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="styles/main.css" type="text/css" />
     </head>
     <body>
         <div class="main">
