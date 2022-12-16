@@ -47,7 +47,7 @@ $total_pages = ceil($total_rows / $size);
 
 $data = $pdo->query("SELECT project.titleProject FROM department_project LEFT JOIN project ON department_project.idProject=project.idProject WHERE idDepartment = $idDep;")->fetchAll();
 
-echo '<div class="third"><ul class="output">';
+echo '<div class="projects"><ul class="output">';
 foreach ($data as $el) {
      echo "<li>" . $el[0] . "</li>";
 }
@@ -101,22 +101,20 @@ echo '</ul></div>';
                 </div>
             </div>
         </div>
-        <div class="second">
-            <h1 class="title-departments">Проекты отдела <?php echo $dep; ?></h1>
-            <ul class="pagination">
-                <li>
-                    <a href="?segment=1">Первая</a>
-                </li>
-                <li class="<?php if($segment <= 1) { echo 'disabled'; } ?>">
-                    <a href="<?php if($segment > 1) { echo "?segment=" . ($segment - 1); } ?>">Назад</a>
-                </li>
-                <li class="<?php if($segment >= $total_pages) { echo 'disabled'; } ?>">
-                    <a href="<?php if($segment < $total_pages) { echo "?segment=" . ($segment + 1); } ?>">Вперед</a>
-                </li>
-                <li>
-                    <a href="?segment=<?php echo $total_pages; ?>">Последняя</a>
-                </li>
-            </ul>
-        </div>
+        <h1 class="second">Проекты отдела <?php echo $dep; ?></h1>
+        <ul class="pagination">
+            <li>
+                <a href="?segment=1">Первая</a>
+            </li>
+            <li class="<?php if($segment <= 1) { echo 'disabled'; } ?>">
+                <a href="<?php if($segment > 1) { echo "?segment=" . ($segment - 1); } ?>">Назад</a>
+            </li>
+            <li class="<?php if($segment >= $total_pages) { echo 'disabled'; } ?>">
+                <a href="<?php if($segment < $total_pages) { echo "?segment=" . ($segment + 1); } ?>">Вперед</a>
+            </li>
+            <li>
+                <a href="?segment=<?php echo $total_pages; ?>">Последняя</a>
+            </li>
+        </ul>
     </body>
 </html>
