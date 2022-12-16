@@ -6,6 +6,6 @@ if(isset($_POST['search'])) {
     echo "произошла ошибка";
 }
 
-header("Location: /project?project=$search");
+header("Location: /project.php?project=$search");
 
 ?>
