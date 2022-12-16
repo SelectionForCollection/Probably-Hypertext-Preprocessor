@@ -105,10 +105,8 @@ echo '</ul></div>';
         </div>
         <h1 class="second">Проекты отдела <?php echo $dep; ?></h1>
         <form class="search" action="main.php">
-            <input type="text" placeholder="Здесь можно быстро найти нужный проект"/>
-            <button class="searchButton">
-                <img src="images/magnifying-glass-solid.svg"/>
-            </button>
+            <input type="text" class="searchInput" placeholder="Здесь можно быстро найти нужный проект" />
+            <input type="image" src="images/magnifying-glass-solid.svg" class="searchButton" />
         </form>
         <ul class="pagination">
             <li>
