@@ -172,10 +172,22 @@ html, body {
 
 .output {
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     list-style-type: none;
+}
+
+.output li {
+    background: rgba(255, 255, 255, .5);
+    padding: 10px 20px;
+    font-size: 32px;
+    margin: 5px 0;
+    transition: .5s;
+}
+
+.output li:hover {
+    transform: scale(1.08);
 }
 
 .disabled {
@@ -198,16 +210,4 @@ html, body {
 
 .pagination li a{
     text-decoration: none;
-}
-
-.output li {
-    background: rgba(255, 255, 255, .5);
-    padding: 10px 20px;
-    font-size: 32px;
-    margin: 5px 0;
-    transition: .5s;
-}
-
-.output li:hover {
-    transform: scale(1.08);
 }
