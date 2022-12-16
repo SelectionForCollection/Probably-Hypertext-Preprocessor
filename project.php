@@ -25,7 +25,7 @@ $coast = $data[0][0];
         <title>Project</title>
         <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="styles/project.css" type="text/css" />
     </head>
     <body>
         <div class="container">
