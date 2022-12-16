@@ -1,14 +1,21 @@
 <?php
+
+require_once('scripts/boot.php');
+
 if (isset($_GET['project'])) {
     $project = $_GET['project'];
 } else {
-    echo '<script language="javascript">';
-    echo 'alert("Такой проект отсутствует. Проверьту написание или отдел.");';
-    echo 'location.href="project.php"';
-    echo '</script>';
+    header("Location: /index.php");
 }
 
-require_once('scripts/boot.php');
+$data = $pdo->query("SELECT id FROM project WHERE titleProject = '$project');")->fetchAll();
+print_r($data);
+exit;
+if ($data[0])
+echo '<script language="javascript">';
+echo 'alert("Такой проект отсутствует. Проверьту написание или отдел.");';
+echo 'location.href="project.php"';
+echo '</script>';
 
 $data = $pdo->query("SELECT idProject FROM project WHERE titleProject = '$project';")->fetchAll();
 $idProject = $data[0][0];
