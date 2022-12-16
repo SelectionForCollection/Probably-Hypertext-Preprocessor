@@ -46,10 +46,10 @@ $total_pages = ceil($total_rows / $size);
 // $data = $pdo->query("SELECT id FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 // $idUser = $data[0][0];
 $data = $pdo->query("SELECT project.titleProject FROM department_project LEFT JOIN project ON department_project.idProject=project.idProject WHERE idDepartment = $idDep;")->fetchAll();
-
+var_dump($data);
 echo '<ul class="output">';
 foreach ($data as $el) {
-     echo "<li>" . $el[1] . "</li>";
+     echo "<li>" . $el . "</li>";
 }
 echo '</ul>';
 
