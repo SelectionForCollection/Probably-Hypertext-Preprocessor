@@ -199,3 +199,15 @@ html, body {
 .pagination li a{
     text-decoration: none;
 }
+
+.output li {
+    background: rgba(255, 255, 255, .5);
+    padding: 10px 20px;
+    font-size: 32px;
+    margin: 5px 0;
+    transition: .5s;
+}
+
+.output li:hover {
+    transform: scale(1.08);
+}
