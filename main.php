@@ -65,7 +65,7 @@ $area = $data[0][0];
             <div class="card">
                 <div class="additional">
                     <div class="user-card">
-                        <img class="center" src="images/what.jpg" wigth="100" height="100"/>
+                        <img class="center" src="images/what.jpg" wigth="64" height="64"/>
                     </div>
                     <div class="more-info">
                         <h1><?php echo $nickname; ?></h1>
