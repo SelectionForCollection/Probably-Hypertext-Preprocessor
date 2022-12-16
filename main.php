@@ -17,24 +17,6 @@ if (isset($_GET['segment'])) {
 $size = 5;
 $offset = ($segment-1) * $size;
 
-$data = $pdo->query("SELECT COUNT(*) FROM department;")->fetch();
-$total_rows = $data[0];
-
-$total_pages = ceil($total_rows / $size);
-/*
-$data = $pdo->query("SELECT id FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
-$idUser = $data[0][0];
-$data = $pdo->query("SELECT nickname, title FROM developers
-                     LEFT JOIN dev_dep ON developers.id=dev_dep.id_dev
-                     LEFT JOIN departments ON dev_dep.id_dep=departments.id
-                     WHERE developers.id=$idUser LIMIT $offset, $size;")->fetchAll();
-
-echo '<ul class="output">';
-foreach ($data as $el) {
-     echo "<li>" . $el[1] . "</li>";
-}
-echo '</ul>';
-*/
 $data = $pdo->query("SELECT nickname FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $nickname = $data[0][0];
 
@@ -52,6 +34,26 @@ $language = $data[0][0];
 
 $data = $pdo->query("SELECT area.titleArea FROM developer LEFT JOIN area ON developer.area=area.idArea WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
 $area = $data[0][0];
+
+$data = $pdo->query("SELECT idDepartment FROM department WHERE titleDepartment = '$dep';")->fetchAll();
+$idDep = $data[0][0];
+
+$data = $pdo->query("SELECT COUNT(*) FROM department_project WHERE idDepartment = $idDep;")->fetch();
+$total_rows = $data[0];
+
+$total_pages = ceil($total_rows / $size);
+
+// $data = $pdo->query("SELECT id FROM developer WHERE email='" . $_COOKIE["email"] . "';")->fetchAll();
+// $idUser = $data[0][0];
+$data = $pdo->query("SELECT project.titleProject FROM department_project LEFT JOIN project ON department_project.idProject=project.idProject WHERE idDepartment = $idDep;")->fetchAll();
+
+echo '<ul class="output">';
+foreach ($data as $el) {
+     echo "<li>" . $el[1] . "</li>";
+}
+echo '</ul>';
+
+
 ?>
 <html>
     <head>
@@ -100,7 +102,7 @@ $area = $data[0][0];
             </div>
         </div>
         <div class="second">
-            <h1 class="title-departments">Состоите в отделах:</h1>
+            <h1 class="title-departments">Проекты отдела <?php echo $dep; ?></h1>
             <ul class="pagination">
                 <li>
                     <a href="?segment=1">Первая</a>
