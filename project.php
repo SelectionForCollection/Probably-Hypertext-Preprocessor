@@ -32,16 +32,16 @@ $coast = $data[0][0];
         <div class="main">
             <h2 class="titleProject"><?php echo $project; ?></h2>
             <div>
-                <h2>Заказчик</h2>
-                <span><?php echo $client; ?></span>
+                <h2 class="left">Заказчик</h2>
+                <h2 class="right"><?php echo $client; ?></h2>
             </div>
             <div>
-                <h2>Срок сдачи</h2>
-                <span><?php echo $deadline; ?></span>
+                <h2 class="left">Срок сдачи</h2>
+                <h2 class="right"><?php echo $deadline; ?></h2>
             </div>
             <div>
-                <h2>Цена</h2>
-                <span><?php echo $coast; ?></span>
+                <h2 class="left">Цена</h2>
+                <h2 class="right"><?php echo $coast; ?></h2>
             </div>
         </div>
     </body>
