@@ -5,7 +5,7 @@ require_once('scripts/boot.php');
 if (isset($_GET['project'])) {
     $project = $_GET['project'];
 } else {
-    header("Location: /index.php");
+    header("Location: /main.php");
 }
 
 $data = $pdo->query("SELECT idProject FROM project WHERE titleProject = '$project';")->fetchAll();
